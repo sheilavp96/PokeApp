@@ -1,0 +1,14 @@
+.table-container {
+    outline: 2px solid blue;
+    width: 40%;
+    margin: 30px auto;
+    text-align: center;
+}
+.table {
+    text-align: center;
+    color: blueviolet;
+}
+.ant-table-thead > tr > th {
+    color: blueviolet !important;
+    text-align: center;
+}

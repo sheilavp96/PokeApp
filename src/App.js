@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Pokemons from './Pages/Pokemons/Pokemons';
+import Items from './Pages/Items/Items';
+import Berries from './Pages/Berries/Berries';
+import Machine from './Pages/Machine';
+import PokemonDetails from './Pages/Pokemons/PokemonDetails/PokemonDetails';
+import BerriesDetails from './Pages/Berries/BerriesDetails';
+import NotFound from './Pages/NotFound';
+import ItemsDetail from './Pages/Items/ItemsDetail';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    console.log(window.location.pathname);
+    return (
+        <Switch>
+            <Route path='/pokemons' exact component={Pokemons} />
+            <Route path='/items' exact component={Items} />
+            <Route path='/berries' exact component={Berries} />
+            <Route path='/machine' component={Machine} />
+            <Route path='/pokemons/:name' exact component={PokemonDetails} />
+            <Route path='/berries/:name' exact component={BerriesDetails} />
+            <Route path='/items/:name' exact component={ItemsDetail} />
+
+            <Route path='*' component={NotFound} />
+        </Switch>
+    );
 }
 
 export default App;
+
+//exact hace coincidir a la ruta completa
