@@ -1,32 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import { Table } from 'antd';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './berriesDetails.css';
 
-const Berries = () => {
-    const [berrys, setBerrys] = useState([]);
+const Moves = () => {
+    const [moves, setMoves] = useState([]);
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/berry?offset=${offset}&limit=20`)
+        fetch(`https://pokeapi.co/api/v2/move?offset=${offset}&limit=20`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.results);
-                setBerrys(data.results);
-            })
-            .catch((err) => console.log(err));
+                setMoves(data.results);
+            });
     }, [offset]);
 
     const columns = [
         {
-            key: 'berri',
-            title: 'Berry',
+            key: 'move',
+            title: 'Moves',
             dataIndex: 'name',
-            render: (berry) => (
+            render: (mov) => (
                 <>
-                    <Link to={`/berries/${berry}`}>{berry}</Link>
+                    <Link to={`/moves/${mov}`}>{mov}</Link>
                 </>
             ),
             className: 'table',
@@ -39,11 +36,11 @@ const Berries = () => {
             <div className='table-container'>
                 <Table
                     columns={columns}
-                    dataSource={berrys}
+                    dataSource={moves}
                     size={'small'}
                     pagination={{
                         pageSize: 20,
-                        total: 64,
+                        total: 844,
                         onChange: (page, pageSize) => {
                             let newOffSet = (page - 1) * 20;
                             setOffset(newOffSet);
@@ -55,4 +52,4 @@ const Berries = () => {
     );
 };
 
-export default Berries;
+export default Moves;

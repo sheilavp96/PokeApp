@@ -3,7 +3,9 @@
 .nav-container {
     /* outline: 2px solid blue; */
     width: 70%;
-    margin: 20px auto;
+    margin: 30px auto;
+    margin-bottom: 60px;
+
     /* display: block; */
 }
 ul {
@@ -16,10 +18,12 @@ ul {
     padding: 0;
 }
 li {
+    width: 20%;
     /* outline: 2px solid red; */
     height: 80px;
     list-style: none;
 }
+
 img {
     width: 40%;
 }
@@ -39,4 +43,20 @@ nav a:active,
 nav a.active {
     color: rgb(80, 158, 247);
     filter: drop-shadow(0 0 0.35rem #9b9b9b);
+}
+
+@media (max-width: 360px) {
+    .nav-container {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    ul {
+        gap: 5px;
+    }
+    img {
+        width: 60%;
+    }
+    .navlink {
+        font-size: 0.7rem;
+    }
 }

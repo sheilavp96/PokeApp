@@ -1,5 +1,5 @@
 .table-container {
-    outline: 2px solid blue;
+    outline: 1px solid rgb(230, 230, 230);
     width: 40%;
     margin: 30px auto;
     text-align: center;
@@ -9,6 +9,16 @@
     color: blueviolet;
 }
 .ant-table-thead > tr > th {
-    color: blueviolet !important;
+    background: #f23535 !important;
+    color: white !important;
     text-align: center;
+    font-size: 1rem;
+}
+a {
+    color: black;
+}
+@media (max-width: 360px) {
+    .table-container {
+        width: 70%;
+    }
 }

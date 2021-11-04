@@ -6,30 +6,19 @@ import './pokemons.css';
 import Navbar from '../../components/Navbar/Navbar';
 const Pokemons = () => {
     const [currentPage, setCurrentPage] = useState([]);
-    // const [currentPage, setCurrentPage] = useState('https://pokeapi.co/api/v2/pokemon/')
-    const [nextPage, setNextPage] = useState();
-    const [prevPage, setprevPage] = useState();
-    // const [pokeName, setPokeName] = useState('');
+    const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        fetch('https://pokeapi.co/api/v2/pokemon')
+        fetch(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
                 let pokeList = data.results;
 
-                setprevPage(data.previous);
-                setNextPage(data.next);
                 setCurrentPage(pokeList);
             })
             .catch((err) => console.log(err));
-    }, []);
+    }, [offset]);
 
-    /* dataSource.map((e) => {
-        console.log(e.name);
-    }); */
-
-    // <Link to={`pokemons/detail/${dataSource.name}`}>{fila}</Link>
     const columns = [
         {
             key: '1',
@@ -44,19 +33,29 @@ const Pokemons = () => {
         },
     ];
 
-    //previous page
-    /* const previousPage = () => {
-        setCurrentPage(prevPage);
-    }; */
-
     return (
         <div>
             <Navbar />
             <div className='table-container'>
-                <Table columns={columns} dataSource={currentPage} size={'small'}></Table>
+                <Table
+                    columns={columns}
+                    dataSource={currentPage}
+                    size={'small'}
+                    pagination={{
+                        pageSize: 20,
+                        total: 1118,
+                        onChange: (page, pageSize) => {
+                            let newOffSet = (page - 1) * 20;
+                            setOffset(newOffSet);
+                        },
+                    }}
+                ></Table>
             </div>
         </div>
     );
 };
-
+/* pagination={{
+                    pageSize:20,
+                    onChange={handleChangePage}
+                }} */
 export default Pokemons;

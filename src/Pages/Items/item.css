@@ -1,0 +1,44 @@
+.img-item {
+    /* outline: 2px solid black; */
+    border-radius: 50%;
+    background: white;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+.datos {
+    /* background: violet; */
+    font-size: 1.2rem;
+    text-align: center;
+    margin: auto;
+}
+.datos-attributes {
+    width: 100%;
+    text-align: start;
+    height: 90px;
+    font-size: 1rem;
+    padding-left: 4px;
+}
+.datos-item {
+    outline: 2px solid blue;
+    height: 40px;
+    margin: 0 !important;
+}
+
+.container-item {
+    /* outline: 2px solid red; */
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 360px) {
+    .datos-attributes {
+        height: 80px !important;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .container-item {
+        margin-bottom: 20px;
+    }
+}

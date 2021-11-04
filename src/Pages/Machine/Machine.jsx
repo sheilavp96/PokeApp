@@ -1,49 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import { Table } from 'antd';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './berriesDetails.css';
+import { Link, useParams } from 'react-router-dom';
 
-const Berries = () => {
-    const [berrys, setBerrys] = useState([]);
+const Machine = () => {
+    const [machine, setMachine] = useState([]);
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/berry?offset=${offset}&limit=20`)
+        fetch(`https://pokeapi.co/api/v2/machine?offset=${offset}&limit=20`)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.results);
-                setBerrys(data.results);
+                setMachine(data.results);
             })
             .catch((err) => console.log(err));
     }, [offset]);
 
     const columns = [
         {
-            key: 'berri',
-            title: 'Berry',
-            dataIndex: 'name',
-            render: (berry) => (
-                <>
-                    <Link to={`/berries/${berry}`}>{berry}</Link>
-                </>
-            ),
+            key: '4',
+            title: 'Machine',
+            dataIndex: 'url',
+            render: (machine) => <Link to={`/machine/${machine.split('/').at(-2)}`}> Machine: {machine.split('/').at(-2)}</Link>,
+
             className: 'table',
         },
     ];
-
     return (
         <div>
             <Navbar />
             <div className='table-container'>
                 <Table
                     columns={columns}
-                    dataSource={berrys}
+                    dataSource={machine}
                     size={'small'}
                     pagination={{
                         pageSize: 20,
-                        total: 64,
+                        total: 1442,
                         onChange: (page, pageSize) => {
                             let newOffSet = (page - 1) * 20;
                             setOffset(newOffSet);
@@ -55,4 +48,4 @@ const Berries = () => {
     );
 };
 
-export default Berries;
+export default Machine;

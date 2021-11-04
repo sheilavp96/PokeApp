@@ -1,0 +1,24 @@
+.card-machine {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.datos-machine {
+    height: 50px;
+    /* outline: 2px solid red; */
+}
+@media (max-width: 360px) {
+    .card-machine {
+        height: 350px !important;
+    }
+    .datos-machine {
+        height: 60px;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 60px;
+    }
+}

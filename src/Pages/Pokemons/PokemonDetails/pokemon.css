@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 .container-card {
     /* outline: 2px solid blue; */
     width: 30%;
@@ -11,7 +10,8 @@
 }
 
 .btn {
-    background: rgb(100, 92, 155);
+    background: #146ea6;
+    /* filter: drop-shadow(0 0 0.35rem #7abf9f); */
     color: white;
     border-radius: 8px;
     width: 30%;
@@ -24,8 +24,8 @@
 
 .card {
     /* outline: 2px solid black; */
-    border-radius: 10px;
-    background: rgb(206, 252, 255);
+    border-radius: 20px;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     width: 100%;
     height: 550px;
 
@@ -33,25 +33,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow(0 0 0.35rem #9b9b9b);
+    /* filter: drop-shadow(0 0 0.45rem #f2cb05); */
 }
 .img-pokemon {
     /* outline: 2px solid green; */
-    width: 60%;
-    border-radius: 50%;
+
+    width: 50%;
+    border-radius: 30%;
     background: rgb(255, 255, 255);
     margin-bottom: 15px;
-    filter: drop-shadow(0 0 0.35rem #e4e4e4);
+    filter: drop-shadow(0 0 0.45rem #ffffff);
 }
 h1 {
     /* outline: 2px solid orange; */
     text-transform: capitalize;
-    color: rgb(35, 43, 59);
-    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-size: 2.1rem;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    font-weight: 800;
 }
-.datos {
+.datos-container {
     width: 70%;
     height: 150px;
     /* outline: 2px solid red; */
@@ -69,6 +71,23 @@ p {
     font-size: 1.5rem;
     margin: 0;
     background: white;
+    filter: drop-shadow(0 0 0.1rem #ffffff);
+
     border-radius: 8px;
     padding: 2px 0;
+}
+
+@media (max-width: 360px) {
+    .container-card {
+        width: 80% !important;
+        margin: auto;
+    }
+    .card {
+        height: 500px;
+        margin-bottom: 40px;
+    }
+    p {
+        width: 80%;
+        font-size: 1.2rem;
+    }
 }

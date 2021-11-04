@@ -1,0 +1,9 @@
+.name-move {
+    color: white;
+}
+
+@media (max-width: 360px) {
+    .datos {
+        line-height: 46px;
+    }
+}
