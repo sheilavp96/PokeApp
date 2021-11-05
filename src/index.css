@@ -25,10 +25,26 @@ body {
 
 .error {
     color: red;
-    font-size: 1.5rem;
+    margin-top: 25px;
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-weight: 600;
+    text-align: center;
 }
 .ant-table-thead {
     color: #951f54;
+}
+.spin-container {
+    width: 80%;
+    height: 300px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img-card {
+    /* outline: 2px solid red; */
+    width: 20%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 0.45rem #ffffff);
 }

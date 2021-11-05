@@ -1,8 +1,9 @@
 import React from 'react';
-import BerriesDetails from '../Pages/Berries/BerriesDetails';
-import ItemsDetail from '../Pages/Items/ItemsDetail';
-import MachineDetails from '../Pages/Machine/MachineDetails';
-import MovesDetails from '../Pages/Moves/MovesDetails';
+import Error404 from '../Pages/404/Error404';
+import BerriesDetails from '../Pages/Berries/BerriesDetails/BerriesDetails';
+import ItemsDetail from '../Pages/Items/ItemsDetails/ItemsDetail';
+import MachineDetails from '../Pages/Machine/MachineDetails/MachineDetails';
+import MovesDetails from '../Pages/Moves/MovesDetails/MovesDetails';
 import PokemonDetails from '../Pages/Pokemons/PokemonDetails/PokemonDetails';
 
 const TemplateItem = ({ match, location }) => {
@@ -27,7 +28,7 @@ const TemplateItem = ({ match, location }) => {
     if (pathname.includes(`/machine/${variable}`)) {
         return <MachineDetails />;
     }
-    return <div>404 not found</div>;
+    return <Error404 />;
     // return <h1>HOLA</h1>;
 };
 

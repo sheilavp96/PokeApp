@@ -6,6 +6,7 @@ import Pokemons from '../Pages/Pokemons/Pokemons';
 import Machine from '../Pages/Machine/Machine';
 import Moves from '../Pages/Moves/Moves';
 import Items from '../Pages/Items/Items';
+import Error404 from '../Pages/404/Error404';
 
 const Templates = (props) => {
     const route = props.location.pathname;
@@ -33,7 +34,7 @@ const Templates = (props) => {
         return <Machine />;
     }
 
-    return <div>404 not found</div>;
+    return <Error404 />;
 };
 
 export default Templates;

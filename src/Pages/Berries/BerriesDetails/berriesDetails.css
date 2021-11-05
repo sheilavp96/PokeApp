@@ -1,7 +1,7 @@
 .container-card {
     /* outline: 2px solid blue; */
     width: 30%;
-    height: 100vh;
+    min-height: 100vh;
     margin: auto;
     display: flex;
     flex-direction: column;

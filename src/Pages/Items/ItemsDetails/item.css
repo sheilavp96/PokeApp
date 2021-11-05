@@ -1,10 +1,11 @@
 .img-item {
     /* outline: 2px solid black; */
     border-radius: 50%;
-    background: white;
+    /* background: white; */
     margin-top: 30px;
     margin-bottom: 10px;
     width: 40%;
+    filter: drop-shadow(0 0 0.45rem #ffffff);
 }
 
 .datos {

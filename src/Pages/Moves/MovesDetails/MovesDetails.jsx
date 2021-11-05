@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, withRouter } from 'react-router-dom';
-import Moves from './Moves';
+import Spiner from '../../../components/Spiner/Spiner';
+import Error404 from '../../404/Error404';
 import './moves.css';
 
 const MovesDetails = (props) => {
@@ -19,8 +20,6 @@ const MovesDetails = (props) => {
                     return res.json();
                 })
                 .then((data) => {
-                    console.log(data);
-                    console.log(typeof data);
                     setMove(data);
                     setLoading(false);
                 })
@@ -43,19 +42,19 @@ const MovesDetails = (props) => {
                 <button className='btn btn-move' onClick={() => back()}>
                     Regresar
                 </button>
-                Loading content ...
+                <Spiner />
             </div>
         );
     }
     if (error) {
-        return <div className='container-card'>{error}</div>;
+        return <Error404 message={'Move no encontrado'} />;
     }
     return (
         <div className='container-card'>
             <button className='btn btn-move' onClick={() => back()}>
                 Regresar
             </button>
-            {error && <div className='error'>{error}</div>}
+            {/* {error && <div className='error'>{error}</div>} */}
 
             <div className='card card-moves'>
                 <h1 className='name name-move'> {move.name}</h1>
@@ -65,7 +64,7 @@ const MovesDetails = (props) => {
                     <p className='datos'> Poder: {move.power}</p>
                     <p className='datos'> PP: {move.pp}</p>
                     <p className='datos'> Prioridad: {move.priority}</p>
-                    <p className='datos'> Type of damage: {move.damage_class.name}</p>
+                    <p className='datos'> Daño: {move.damage_class.name}</p>
                 </div>
             </div>
         </div>

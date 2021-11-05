@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import TemplateItem from './components/TemplateItem';
-import Templates from './components/Templates';
+import TemplateItem from './Templates/TemplateItem';
+import Templates from './Templates/Templates';
 
 function App() {
     return (

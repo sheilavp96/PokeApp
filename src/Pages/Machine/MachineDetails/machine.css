@@ -1,0 +1,38 @@
+.card-machine {
+    /* outline: 2px solid red; */
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.datos-machine {
+    height: 50px;
+    width: 90%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    /* outline: 2px solid red; */
+}
+@media (max-width: 360px) {
+    .img-card {
+        margin-top: 30px;
+        /* outline: 2px solid green; */
+    }
+    .card-machine {
+        height: 500px !important;
+    }
+    .datos-machine {
+        /* outline: 2px solid red; */
+        height: 60px;
+        font-size: 1rem;
+        text-align: center;
+        line-height: 60px;
+    }
+    .container-datos {
+        height: 350px;
+        /* outline: 2px solid green; */
+        margin-bottom: 20px;
+    }
+}

@@ -21,4 +21,8 @@ a {
     .table-container {
         width: 70%;
     }
+    .global-container {
+        /* background: green; */
+        height: 1100px;
+    }
 }
